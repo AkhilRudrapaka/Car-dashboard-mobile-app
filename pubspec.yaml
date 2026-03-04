@@ -60,8 +60,6 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/videos/
     - assets/lottie/
     - assets/images/
     - assets/loads/
-    - .env

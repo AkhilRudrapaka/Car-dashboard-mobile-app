@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 import 'package:flutter_tts/flutter_tts.dart';
@@ -41,7 +42,10 @@ typedef OnArrived = void Function();
 // ─────────────────── Service ───────────────────
 
 class VoiceAssistantService {
-  static final String _apiKey = dotenv.env['GOOGLE_MAPS_API_KEY'] ?? '';
+  // Reads from --dart-define (Web/Vercel) or falls back to .env file (Android)
+  static final String _apiKey = kIsWeb
+      ? const String.fromEnvironment('GOOGLE_MAPS_API_KEY')
+      : (dotenv.env['GOOGLE_MAPS_API_KEY'] ?? '');
 
   final SpeechToText _stt = SpeechToText();
   final FlutterTts _tts = FlutterTts();
