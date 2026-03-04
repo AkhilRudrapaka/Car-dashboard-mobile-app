@@ -10,7 +10,11 @@ export PATH="$PATH:`pwd`/flutter/bin"
 # 3. Enable Web support
 flutter config --enable-web
 
-# 4. Build the Web App
+# 4. Get dependencies
+echo "Getting dependencies..."
+flutter pub get
+
+# 5. Build the Web App
 echo "Building Flutter Web..."
 flutter build web --release \
   --dart-define=GOOGLE_MAPS_API_KEY=$GOOGLE_MAPS_API_KEY \
