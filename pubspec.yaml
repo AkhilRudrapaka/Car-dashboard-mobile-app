@@ -41,6 +41,7 @@ dependencies:
   flutter_ble_peripheral: ^2.1.0
   mobile_scanner: ^5.2.3
   qr_flutter: ^4.1.0
+  flutter_dotenv: ^6.0.0
 
 dev_dependencies:
   flutter_test:
@@ -63,3 +64,4 @@ flutter:
     - assets/lottie/
     - assets/images/
     - assets/loads/
+    - .env

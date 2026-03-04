@@ -7,6 +7,7 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:http/http.dart' as http;
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 // ─────────────────── Data Classes ───────────────────
 
@@ -40,7 +41,7 @@ typedef OnArrived = void Function();
 // ─────────────────── Service ───────────────────
 
 class VoiceAssistantService {
-  static const String _apiKey = 'AIzaSyBkqsRwb7_CgiOw2H0auTBIfyKWQQjPEBw';
+  static final String _apiKey = dotenv.env['GOOGLE_MAPS_API_KEY'] ?? '';
 
   final SpeechToText _stt = SpeechToText();
   final FlutterTts _tts = FlutterTts();

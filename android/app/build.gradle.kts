@@ -31,6 +31,9 @@ android {
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"
+        
+        val mapsKey = project.findProperty("MAPS_API_KEY") as String? ?: "AIzaSyBkqsRwb7_CgiOw2H0auTBIfyKWQQjPEBw"
+        manifestPlaceholders["mapsApiKey"] = mapsKey
     }
 
     buildTypes {
